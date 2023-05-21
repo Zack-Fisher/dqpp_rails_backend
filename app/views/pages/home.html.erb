@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keypress Toggle</title>
+  <%= javascript_include_tag 'dist/rails_application_includes.bundle' %>
+  <%= javascript_include_tag 'dist/file.bundle' %>
+  <%= javascript_include_tag 'hello' %>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('keydown', function(event) {
+        if (event.code === 'KeyW') {
+          var square = document.getElementById('square');
+          square.classList.toggle('hidden');
+        }
+      });
+    });
+  </script>
+  <style>
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="square" class="square"></div>
+  <div id='root'></div>
+</body>
+</html>

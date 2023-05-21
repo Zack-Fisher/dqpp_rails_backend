@@ -1,0 +1,14 @@
+<h1 style='color:green'>passwords</h1>
+
+<div id="passwords">
+    <% Rails.logger.info @hello %>
+    <p>user id: <%= session[:user_id] %></p>
+    <p>password: <%= session[:password] %></p>
+    <!--button that makes a POST request, therefore making a new password.-->
+    <%= form_tag('/passwords', method: :get) do %>
+        <%= submit_tag "GET" %>
+    <% end %>
+    <%= form_tag('/passwords', method: :post) do %>
+        <%= submit_tag "POST" %>
+    <% end %>
+</div>
